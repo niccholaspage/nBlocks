@@ -12,6 +12,9 @@ public class nBlocksPlayerListener extends PlayerListener {
 	 public void onPlayerPickupItem(PlayerPickupItemEvent event){
 		 Player player = event.getPlayer();
 		 Item item = event.getItem();
+		 if (item.getItemStack().getTypeId() > 254){
+			 return;
+		 }
 		  if (!(nBlocks.Permissions.has(player, "nBlocks." + item.getItemStack().getType().name().toLowerCase()))){
 			  event.setCancelled(true);
 		  }

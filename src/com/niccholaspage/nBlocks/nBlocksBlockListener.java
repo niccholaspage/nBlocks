@@ -14,7 +14,7 @@ public class nBlocksBlockListener extends BlockListener{
 	  public void onBlockBreak(BlockBreakEvent event) {
 		  Player player = event.getPlayer();
 		  Block block = event.getBlock();
-		  if (!(nBlocks.Permissions.has(player, "nBlocks." + block.getType().name().toLowerCase()))){
+		  if ((!(nBlocks.Permissions.has(player, "nBlocks." + block.getType().name().toLowerCase()))) && (block.getTypeId() < 254)){
 			  player.sendMessage("You do not have permissions to break that block!");
 			  event.setCancelled(true);
 		  }
@@ -22,7 +22,7 @@ public class nBlocksBlockListener extends BlockListener{
 	  public void onBlockPlace(BlockPlaceEvent event){
 		  Player player = event.getPlayer();
 		  Block block = event.getBlock();
-		  if (!(nBlocks.Permissions.has(player, "nBlocks." + block.getType().name().toLowerCase()))){
+		  if ((!(nBlocks.Permissions.has(player, "nBlocks." + block.getType().name().toLowerCase()))) && (block.getTypeId() < 254)){
 			  player.sendMessage("You do not have permissions to place that block!");
 			  event.setCancelled(true);
 		  }
