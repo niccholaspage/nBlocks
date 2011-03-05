@@ -1,0 +1,5 @@
+name: nBlocks
+
+main: com.niccholaspage.nBlocks.nBlocks
+
+version: 0.1
